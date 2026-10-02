@@ -304,7 +304,7 @@ class RoadSegment {
             this.mesh.position.y = this.initialY - (1 - progress) * 2;
             
             // Efecto visual mejorado para plataformas cayendo
-            if (this.collapseTimer > 300) {
+            if (this.collapseTimer > 50) {
                 // Fase inicial: parpadeo suave en amarillo
                 const warningProgress = (this.collapseTimer - 300) / (getCollapseTime() - 300);
                 this.road.material.color.setRGB(
@@ -316,7 +316,7 @@ class RoadSegment {
                 this.edge.material.opacity = 0.9;
             } else {
                 // Fase final: desvanecimiento gradual
-                const fadeProgress = this.collapseTimer / 300;
+                const fadeProgress = this.collapseTimer / 50;
                 this.road.material.opacity = fadeProgress * 0.7;
                 this.edge.material.opacity = fadeProgress * 0.7;
                 this.road.material.color.setRGB(
@@ -327,7 +327,7 @@ class RoadSegment {
             }
 
             // Cuando el temporizador llega a 0, la plataforma ya no es sólida
-            if (this.collapseTimer <= 300) {
+            if (this.collapseTimer <= 50) {
                 this.solid = false;
             }
 
