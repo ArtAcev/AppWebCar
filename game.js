@@ -59,7 +59,7 @@ function updateDifficulty() {
         levelElement.style.zIndex = '100';
         levelElement.textContent = `¡Nivel ${currentLevel}!\nTiempo de colapso: ${getCollapseTime()}ms`;
         document.body.appendChild(levelElement);
-        setTimeout(() => document.body.removeChild(levelElement), 2000);
+        setTimeout(() => document.body.removeChild(levelElement), 200);
     }
 }
 
